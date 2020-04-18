@@ -1,0 +1,4 @@
+export const FETCH_LOGIN = 'FETCH_LOGIN';
+export const FETCH_OTP = 'FETCH_OTP';
+export const FETCH_REGISTER = 'FETCH_REGISTER';
+export const IS_AUTHENTICATED = 'IS_AUTHENTICATED'

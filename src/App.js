@@ -1,25 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import store from "./store";
+import LoginPage from "./pages/LoginPage/LoginPage";
+import RegisterPage from "./pages/RegisterPage/RegisterPage";
+import jwt from "jsonwebtoken";
+import { setIsAuthenticated } from "./actions/authActions";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
+import { Provider } from "react-redux";
 
 function App() {
+  if (localStorage.jwtToken) {
+    store.dispatch(setIsAuthenticated(jwt.decode(localStorage.jwtToken)));
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <Router>
+          <Switch>
+            <Route path="/login" component={LoginPage} />
+            <Route path="/register" component={RegisterPage} />
+          </Switch>
+        </Router>
+      </div>
+    </Provider>
   );
 }
 
