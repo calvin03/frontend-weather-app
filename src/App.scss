@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap');
+
+$text_style :'Poppins', sans-serif !important;
+
+p{
+    font-family: $text_style;
+    line-height: 1.5rem;
+}
+
+
+@media only screen and (max-width: 411px) {
+    p{
+        font-family: $text_style;
+        line-height: 1.5rem;
+        font-size: 15px !important
+        ;
+    }
+    h1{
+        font-size: 20px;
+    }
+  }
