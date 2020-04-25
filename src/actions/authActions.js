@@ -5,6 +5,7 @@ import {
   IS_AUTHENTICATED,
 } from "../reducers/reducerTypes/authTypes";
 import axios from "axios";
+
 import jwt from "jsonwebtoken";
 
 const apiUrl = process.env.REACT_APP_API_URL;
