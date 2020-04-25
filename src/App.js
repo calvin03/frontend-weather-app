@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import store from "./store";
-import LoginPage from "./pages/LoginPage/LoginPage";
-import RegisterPage from "./pages/RegisterPage/RegisterPage";
-import LandingPage from "./pages/LandingPage/LandingPage"
+import LandingPage from "./pages/LandingPage/LandingPage";
 import jwt from "jsonwebtoken";
 import { setIsAuthenticated } from "./actions/authActions";
 import {
@@ -12,7 +10,15 @@ import {
   Redirect,
 } from "react-router-dom";
 import { Provider } from "react-redux";
-import './App.scss'
+import "./App.scss";
+import { toast } from "react-toastify";
+
+
+toast.configure({
+  autoClose: 2000,
+  draggable: false,
+  //etc you get the idea
+});
 
 function App() {
   if (localStorage.jwtToken) {
@@ -24,8 +30,6 @@ function App() {
       <div>
         <Router>
           <Switch>
-            <Route path="/login" component={LoginPage} />
-            <Route path="/register" component={RegisterPage} />
             <Route path="/" component={LandingPage} />
           </Switch>
         </Router>

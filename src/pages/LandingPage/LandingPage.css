@@ -1,0 +1,50 @@
+
+
+.banner{
+    display: table;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.pexels.com/photos/1008155/pexels-photo-1008155.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80vh;
+}
+.MuiInputBase-input {
+    font: inherit;
+    color: black !important;
+    width: 100%;
+    border: 0;
+    height: 1.1876em;
+    margin: 0;
+    display: block;
+    padding: 6px 0 7px;
+    min-width: 0;
+    background: white  !important;
+    box-sizing: content-box;
+    animation-name: mui-auto-fill-cancel;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.MuiInputBase-input:focus{
+    background: none !important;
+    color: white !important
+}
+
+
+.MuiFormLabel-root.Mui-focused{
+    color:white !important;
+    background: none !important;
+}
+
+.weather-container{
+    margin-top: -12%;
+}
+@media only screen and (max-width: 1024px) {
+    .google-map {
+        height: 250px !important
+    }
+    .weather-container{
+        margin-top: -15%;
+    }
+  }
+
