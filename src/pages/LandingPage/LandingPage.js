@@ -66,7 +66,7 @@ export default function LandingPage() {
   const MapWithAMarker = withScriptjs(
     withGoogleMap((props) => (
       <GoogleMap
-        defaultZoom={10}
+        defaultZoom={13}
         defaultCenter={{ lat: coordinates.lat, lng: coordinates.lon }}
       >
         <Marker position={{ lat: coordinates.lat, lng: coordinates.lon }} />
