@@ -1,7 +1,8 @@
-import {FETCH_WEATHER} from './reducerTypes/weatherTypes'
+import {FETCH_WEATHER, FETCH_ESTABLISHMENT} from './reducerTypes/weatherTypes'
 
 const initialState = {
-    weather: []
+    weather: [],
+    establishment: []
 };
 
 
@@ -11,6 +12,11 @@ export default function(state = initialState, action) {
         return {
           ...state,
           weather: action.payload
+        };
+      case FETCH_ESTABLISHMENT:
+        return {
+          ...state,
+          establishment: action.payload
         };
       default:
         return state;

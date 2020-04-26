@@ -12,8 +12,8 @@ import {
 import { Provider } from "react-redux";
 import "./App.scss";
 import { toast } from "react-toastify";
-
-
+import LoadingScreen from "./components/LoadingScreen/LoadingScreen";
+import Footer from "./components/Footer/Footer"
 toast.configure({
   autoClose: 2000,
   draggable: false,
@@ -21,12 +21,9 @@ toast.configure({
 });
 
 function App() {
-  if (localStorage.jwtToken) {
-    store.dispatch(setIsAuthenticated(jwt.decode(localStorage.jwtToken)));
-  }
-
   return (
     <Provider store={store}>
+      <LoadingScreen />
       <div>
         <Router>
           <Switch>

@@ -46,7 +46,7 @@ export default function GoogleMapsAutoComplete() {
     lon: "",
     establishment: "",
   });
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   function handleChange(address) {
     setAddress(address);
   }
@@ -64,8 +64,14 @@ export default function GoogleMapsAutoComplete() {
       .catch((error) => console.error("Error", error));
   }
 
+  function handleForm(event) {
+    const value = event.target.value;
+
+    setCoordinates({ ...coordinates, [event.target.name]: value });
+  }
+
   function submitForm() {
-      dispatch(getWeather(coordinates));
+    dispatch(getWeather(coordinates));
   }
 
   return (
@@ -152,6 +158,7 @@ export default function GoogleMapsAutoComplete() {
             label="Eg. Mall, Clubs, Pet store"
             name="establishment"
             autoFocus
+            onChange={handleForm}
           />
 
           <Button

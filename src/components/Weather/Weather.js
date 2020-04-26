@@ -8,6 +8,7 @@ import AcUnitIcon from "@material-ui/icons/AcUnit";
 import Brightness7Icon from "@material-ui/icons/Brightness7";
 import Brightness2Icon from "@material-ui/icons/Brightness2";
 import { useDispatch, useSelector } from "react-redux";
+import { getWeather } from "../../actions/weatherActions";
 
 export default function Weather(props) {
   const weatherData = useSelector((state) => state.weather.weather);
@@ -46,7 +47,7 @@ export default function Weather(props) {
         <div
           className={classes.weather}
           style={{
-            background: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${weatherBackground})`,
+            background: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url()`,
           }}
         >
           <div>
